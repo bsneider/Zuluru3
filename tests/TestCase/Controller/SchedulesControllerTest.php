@@ -52,7 +52,7 @@ class SchedulesControllerTest extends ControllerTestCase {
 			'app.Notes',
 			'app.Settings',
 		'app.I18n',
-		'app.Plugins',
+
 	];
 
 	/**

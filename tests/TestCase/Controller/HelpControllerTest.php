@@ -20,7 +20,7 @@ class HelpControllerTest extends ControllerTestCase {
 				'app.GroupsPeople',
 			'app.Settings',
 		'app.I18n',
-		'app.Plugins',
+
 	];
 
 	/**

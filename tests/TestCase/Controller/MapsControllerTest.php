@@ -28,7 +28,7 @@ class MapsControllerTest extends ControllerTestCase {
 					'app.DivisionsPeople',
 			'app.Settings',
 		'app.I18n',
-		'app.Plugins',
+
 	];
 
 	/**
