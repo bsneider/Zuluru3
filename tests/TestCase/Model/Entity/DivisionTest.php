@@ -14,24 +14,6 @@ use Cake\ORM\TableRegistry;
  * App\Model\Entity\Division Test Case
  */
 class DivisionTest extends TestCase {
-
-	/**
-	 * Test subjects
-	 *
-	 * @var \App\Model\Entity\Division
-	 */
-	public $LadderDivision;
-
-	/**
-	 * @var \App\Model\Entity\Division
-	 */
-	public $RoundRobinDivision;
-
-	/**
-	 * @var \App\Model\Entity\Division
-	 */
-	public $PlayoffDivision;
-
 	/**
 	 * setUp method
 	 *
@@ -41,19 +23,6 @@ class DivisionTest extends TestCase {
 		parent::setUp();
 		Configure::load('options');
 		Configure::load('sports');
-	}
-
-	/**
-	 * tearDown method
-	 *
-	 * @return void
-	 */
-	public function tearDown() {
-		unset($this->LadderDivision);
-		unset($this->RoundRobinDivision);
-		unset($this->PlayoffDivision);
-
-		parent::tearDown();
 	}
 
 	/**

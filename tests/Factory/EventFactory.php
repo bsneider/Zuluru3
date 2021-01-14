@@ -1,6 +1,7 @@
 <?php
 namespace App\Test\Factory;
 
+use Cake\I18n\FrozenTime;
 use CakephpFixtureFactories\Factory\BaseFactory;
 use Faker\Generator;
 
@@ -26,10 +27,16 @@ class EventFactory extends BaseFactory
     {
         $this->setDefaultData(function(Generator $faker) {
             return [
-
+                'open' => FrozenTime::now()->startOfYear(),
+                'close' => FrozenTime::now()->endOfYear(),
             ];
         });
 
         $this->with('EventTypes');
+    }
+
+    public function setCustom(array $customFields)
+    {
+        return $this->patchData(['custom' => serialize($customFields)]);
     }
 }

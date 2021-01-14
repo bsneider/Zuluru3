@@ -1,10 +1,11 @@
 <?php
 namespace App\Test\Factory;
 
+use Cake\Chronos\Date;
 use CakephpFixtureFactories\Factory\BaseFactory;
 use Faker\Generator;
 
-class RegistrationFactory extends BaseFactory
+class PersonFactory extends BaseFactory
 {
     /**
      * Defines the Table Registry used to generate entities with
@@ -12,7 +13,7 @@ class RegistrationFactory extends BaseFactory
      */
     protected function getRootTableRegistryName(): string
     {
-        return "Registrations";
+        return "People";
     }
 
     /**
@@ -26,33 +27,14 @@ class RegistrationFactory extends BaseFactory
     {
         $this->setDefaultData(function(Generator $faker) {
             return [
+                'first_name' => $faker->firstName,
+                'last_name' => $faker->lastName,
+                'gender' => $faker->title,
+                'roster_designation' => 'foo',
 
+                // The modified field is not nullable and required in the DB
+                'modified' => Date::now(),
             ];
         });
-    }
-
-    /**
-     * @param string $payment
-     * @return $this
-     */
-    public function setPayment(string $payment)
-    {
-        return $this->patchData(compact('payment'));
-    }
-
-    /**
-     * @return $this
-     */
-    public function paid()
-    {
-        return $this->setPayment('Paid');
-    }
-
-    /**
-     * @return $this
-     */
-    public function unpaid()
-    {
-        return $this->setPayment('Unpaid');
     }
 }

@@ -6,6 +6,8 @@ use Faker\Generator;
 
 class GameFactory extends BaseFactory
 {
+    const TODO_FACTORIES = 'TESTS LEFT BEHIND TO BE FIXED';
+
     /**
      * Defines the Table Registry used to generate entities with
      * @return string

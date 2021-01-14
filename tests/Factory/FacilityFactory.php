@@ -4,7 +4,7 @@ namespace App\Test\Factory;
 use CakephpFixtureFactories\Factory\BaseFactory;
 use Faker\Generator;
 
-class RegistrationFactory extends BaseFactory
+class FacilityFactory extends BaseFactory
 {
     /**
      * Defines the Table Registry used to generate entities with
@@ -12,7 +12,7 @@ class RegistrationFactory extends BaseFactory
      */
     protected function getRootTableRegistryName(): string
     {
-        return "Registrations";
+        return "Facilities";
     }
 
     /**
@@ -29,30 +29,5 @@ class RegistrationFactory extends BaseFactory
 
             ];
         });
-    }
-
-    /**
-     * @param string $payment
-     * @return $this
-     */
-    public function setPayment(string $payment)
-    {
-        return $this->patchData(compact('payment'));
-    }
-
-    /**
-     * @return $this
-     */
-    public function paid()
-    {
-        return $this->setPayment('Paid');
-    }
-
-    /**
-     * @return $this
-     */
-    public function unpaid()
-    {
-        return $this->setPayment('Unpaid');
     }
 }
